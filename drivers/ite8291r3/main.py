@@ -386,10 +386,10 @@ class Ite8291r3:
 
             # exit animation
             while self._video_brightness > 0 and not is_video_loop and self.video_thread_enable:
-                self._video_brightness -= 1/(fps*2)
                 voltmap = self.color_to_voltage(colormap) * self._video_brightness 
                 self.apply_voltmap(voltmap)
                 time.sleep(1/fps) # todo: count delays
+                self._video_brightness -= 1/(fps*2)
 
         logging.info("exiting video_function")
 
